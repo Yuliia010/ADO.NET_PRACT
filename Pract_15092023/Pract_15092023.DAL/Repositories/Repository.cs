@@ -22,6 +22,7 @@ namespace Pract_15092023.DAL.Repositories
         public void Add(T entity)
         {
             _dbSet.Add(entity);
+            _context.SaveChanges();
         }
 
         public T Get(int id)
