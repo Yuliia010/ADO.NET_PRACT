@@ -40,5 +40,11 @@ namespace Pract_15092023
         { 
             return  _studentRepository.GetAll(); 
         }
+
+        public void RemoveStudent(int id)
+        {
+            var student = GetStudent(id);
+            _studentRepository.Remove(student);
+        }
     }
 }

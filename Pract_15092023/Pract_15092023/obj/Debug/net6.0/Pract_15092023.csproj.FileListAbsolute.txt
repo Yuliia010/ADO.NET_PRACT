@@ -154,3 +154,4 @@ C:\Users\Yuliia\source\repos\Yuliia010\ADO.NET_PRACT\Pract_15092023\Pract_150920
 C:\Users\Yuliia\source\repos\Yuliia010\ADO.NET_PRACT\Pract_15092023\Pract_15092023\obj\Debug\net6.0\Pract_15092023.pdb
 C:\Users\Yuliia\source\repos\Yuliia010\ADO.NET_PRACT\Pract_15092023\Pract_15092023\obj\Debug\net6.0\Pract_15092023.genruntimeconfig.cache
 C:\Users\Yuliia\source\repos\Yuliia010\ADO.NET_PRACT\Pract_15092023\Pract_15092023\obj\Debug\net6.0\ref\Pract_15092023.dll
+C:\Users\Yuliia\Source\Repos\Yuliia010\ADO.NET_PRACT\Pract_15092023\Pract_15092023\bin\Debug\net6.0\Newtonsoft.Json.dll

@@ -1,0 +1,52 @@
+{
+  "Students": [
+    {
+      "Id": 1,
+      "Name": "Oleg",
+      "LastName": "Petrov",
+      "BirthDate": "1997-09-16",
+      "MailAddress": "op@gmail.com",
+      "PhoneNumber": "38099887766",
+      "StudentCard": {
+        "Id": 1,
+        "CardNumber": "BB-908877",
+        "ExpireDate": "2024-09-15",
+        "IsActive": true
+      }
+    },
+
+    {
+      "Id": 2,
+      "Name": "Ira",
+      "LastName": "Ivanova",
+      "BirthDate": "1998-07-01",
+      "MailAddress": "iri@gmail.com",
+      "PhoneNumber": "380668844444",
+      "StudentCard": {
+        "Id": 2,
+        "CardNumber": "AB-933377",
+        "ExpireDate": "2026-09-15",
+        "IsActive": true
+      }
+    },
+
+    {
+      "Id": 3,
+      "Name": "Ostap",
+      "LastName": "White",
+      "BirthDate": "1995-12-16",
+      "MailAddress": "ow@gmail.com",
+      "PhoneNumber": "3809112223333",
+      "StudentCard": {
+        "Id": 3,
+        "CardNumber": "KK-9081111",
+        "ExpireDate": "2023-05-05",
+        "IsActive": false
+      }
+    }
+
+  ]
+
+}
+
+

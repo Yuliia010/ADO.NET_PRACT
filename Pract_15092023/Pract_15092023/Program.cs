@@ -1,4 +1,6 @@
-﻿using Pract_15092023.DAL.Repositories;
+﻿using Newtonsoft.Json;
+using Pract_15092023.DAL.Entity;
+using Pract_15092023.DAL.Repositories;
 
 namespace Pract_15092023
 {
@@ -7,11 +9,17 @@ namespace Pract_15092023
     {
         static void Main(string[] args)
         {
-            var repository = new Repository();
-            var students = repository.GetAllStudents();
-            var studentsCards = repository.GetAllStudentCards();
+            string jsonPath = "C:\\Users\\Yuliia\\Source\\Repos\\Yuliia010\\ADO.NET_PRACT\\Pract_15092023\\Pract_15092023\\Students.json";
+            string contents = File.ReadAllText(jsonPath);
+            TestObject testStudents = JsonConvert.DeserializeObject<TestObject>(contents);
 
-            
+            List<Student> students = testStudents.Students;
+
+            //var repository = new Repository();
+            //var students = repository.GetAllStudents();
+            //var studentsCards = repository.GetAllStudentCards();
+
+
 
             foreach ( var student in students )
             {
@@ -25,5 +33,11 @@ namespace Pract_15092023
 
             }
         }
+
+    }
+
+    public class TestObject
+    {
+        public List<Student> Students;
     }
 }
