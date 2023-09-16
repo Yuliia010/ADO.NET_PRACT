@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "PnhwQuK7d+xLE5+bRi2xbpWkl6SG0P9lZNFY1C8qjV/XJaU7oAij2clQiWaBMeS/NiazvnC3+cO2dMhXe1FkfA==",
+  "dgSpecHash": "p7VFiQAuvAM+yHtr9lsO9v2mwJKD5qaN+nY3vriY3GUqyo2B1qQ9PgxRPMJX6CZbeOoUdPBkHhYDhJGewBa9gQ==",
   "success": true,
-  "projectFilePath": "D:\\StudyStep\\WinFormsWorks\\Pract_15092023\\Pract_15092023.DAL\\Pract_15092023.DAL.csproj",
+  "projectFilePath": "C:\\Users\\Yuliia\\source\\repos\\Yuliia010\\ADO.NET_PRACT\\Pract_15092023\\Pract_15092023.DAL\\Pract_15092023.DAL.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Yuliia\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",
     "C:\\Users\\Yuliia\\.nuget\\packages\\azure.identity\\1.7.0\\azure.identity.1.7.0.nupkg.sha512",

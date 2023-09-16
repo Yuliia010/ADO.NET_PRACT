@@ -3031,11 +3031,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\StudyStep\\WinFormsWorks\\Pract_15092023\\Pract_15092023\\Pract_15092023.csproj",
+      "projectUniqueName": "C:\\Users\\Yuliia\\source\\repos\\Yuliia010\\ADO.NET_PRACT\\Pract_15092023\\Pract_15092023\\Pract_15092023.csproj",
       "projectName": "Pract_15092023",
-      "projectPath": "D:\\StudyStep\\WinFormsWorks\\Pract_15092023\\Pract_15092023\\Pract_15092023.csproj",
+      "projectPath": "C:\\Users\\Yuliia\\source\\repos\\Yuliia010\\ADO.NET_PRACT\\Pract_15092023\\Pract_15092023\\Pract_15092023.csproj",
       "packagesPath": "C:\\Users\\Yuliia\\.nuget\\packages\\",
-      "outputPath": "D:\\StudyStep\\WinFormsWorks\\Pract_15092023\\Pract_15092023\\obj\\",
+      "outputPath": "C:\\Users\\Yuliia\\source\\repos\\Yuliia010\\ADO.NET_PRACT\\Pract_15092023\\Pract_15092023\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -3056,8 +3056,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "D:\\StudyStep\\WinFormsWorks\\Pract_15092023\\Pract_15092023.DAL\\Pract_15092023.DAL.csproj": {
-              "projectPath": "D:\\StudyStep\\WinFormsWorks\\Pract_15092023\\Pract_15092023.DAL\\Pract_15092023.DAL.csproj"
+            "C:\\Users\\Yuliia\\source\\repos\\Yuliia010\\ADO.NET_PRACT\\Pract_15092023\\Pract_15092023.DAL\\Pract_15092023.DAL.csproj": {
+              "projectPath": "C:\\Users\\Yuliia\\source\\repos\\Yuliia010\\ADO.NET_PRACT\\Pract_15092023\\Pract_15092023.DAL\\Pract_15092023.DAL.csproj"
             }
           }
         }

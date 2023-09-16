@@ -789,11 +789,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\StudyStep\\WinFormsWorks\\Pract_31082023_u\\Pract_31082023\\Pract_31082023.csproj",
+      "projectUniqueName": "C:\\Users\\Yuliia\\Source\\Repos\\Yuliia010\\ADO.NET_PRACT\\Pract_31082023\\Pract_31082023\\Pract_31082023.csproj",
       "projectName": "Pract_31082023",
-      "projectPath": "D:\\StudyStep\\WinFormsWorks\\Pract_31082023_u\\Pract_31082023\\Pract_31082023.csproj",
+      "projectPath": "C:\\Users\\Yuliia\\Source\\Repos\\Yuliia010\\ADO.NET_PRACT\\Pract_31082023\\Pract_31082023\\Pract_31082023.csproj",
       "packagesPath": "C:\\Users\\Yuliia\\.nuget\\packages\\",
-      "outputPath": "D:\\StudyStep\\WinFormsWorks\\Pract_31082023_u\\Pract_31082023\\obj\\",
+      "outputPath": "C:\\Users\\Yuliia\\Source\\Repos\\Yuliia010\\ADO.NET_PRACT\\Pract_31082023\\Pract_31082023\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
