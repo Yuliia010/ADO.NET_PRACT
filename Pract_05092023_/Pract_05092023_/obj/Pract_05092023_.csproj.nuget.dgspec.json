@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\StudyStep\\WinFormsWorks\\Pract_05092023_\\Pract_05092023_\\Pract_05092023_.csproj": {}
+    "C:\\Users\\Yuliia\\Source\\Repos\\Yuliia010\\ADO.NET_PRACT\\Pract_05092023_\\Pract_05092023_\\Pract_05092023_.csproj": {}
   },
   "projects": {
-    "D:\\StudyStep\\WinFormsWorks\\Pract_05092023_\\Pract_05092023_\\Pract_05092023_.csproj": {
+    "C:\\Users\\Yuliia\\Source\\Repos\\Yuliia010\\ADO.NET_PRACT\\Pract_05092023_\\Pract_05092023_\\Pract_05092023_.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\StudyStep\\WinFormsWorks\\Pract_05092023_\\Pract_05092023_\\Pract_05092023_.csproj",
+        "projectUniqueName": "C:\\Users\\Yuliia\\Source\\Repos\\Yuliia010\\ADO.NET_PRACT\\Pract_05092023_\\Pract_05092023_\\Pract_05092023_.csproj",
         "projectName": "Pract_05092023_",
-        "projectPath": "D:\\StudyStep\\WinFormsWorks\\Pract_05092023_\\Pract_05092023_\\Pract_05092023_.csproj",
+        "projectPath": "C:\\Users\\Yuliia\\Source\\Repos\\Yuliia010\\ADO.NET_PRACT\\Pract_05092023_\\Pract_05092023_\\Pract_05092023_.csproj",
         "packagesPath": "C:\\Users\\Yuliia\\.nuget\\packages\\",
-        "outputPath": "D:\\StudyStep\\WinFormsWorks\\Pract_05092023_\\Pract_05092023_\\obj\\",
+        "outputPath": "C:\\Users\\Yuliia\\Source\\Repos\\Yuliia010\\ADO.NET_PRACT\\Pract_05092023_\\Pract_05092023_\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

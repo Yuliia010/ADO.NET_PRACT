@@ -11,10 +11,7 @@ namespace Pract_15092023
             var students = repository.GetAllStudents();
             var studentsCards = repository.GetAllStudentCards();
 
-            foreach (var cards in studentsCards)
-            {
-
-            }
+            
 
             foreach ( var student in students )
             {

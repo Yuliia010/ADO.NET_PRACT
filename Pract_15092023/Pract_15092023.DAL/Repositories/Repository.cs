@@ -1,4 +1,5 @@
-﻿using Pract_15092023.DAL.Entity;
+﻿using Microsoft.EntityFrameworkCore;
+using Pract_15092023.DAL.Entity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,28 +8,46 @@ using System.Threading.Tasks;
 
 namespace Pract_15092023.DAL.Repositories
 {
-    public class Repository
+    public class Repository<T> : IRepository<T> where T : class
     {
-        public readonly StudentsContext context;
-
-        public Repository()
+        private readonly DbContext _context;
+        
+        private readonly DbSet<T> _dbSet;
+        public Repository(DbContext context)
         {
-            context = new StudentsContext();
+            _context = context;
+            _dbSet = _context.Set<T>();
         }
 
-        //public Student AddStudent(Student student)
+        public void Add(T entity)
+        {
+            _dbSet.Add(entity);
+        }
+
+        public T Get(int id)
+        {
+            return _dbSet.Find(id);
+        }
+
+        public IEnumerable<T> GetAll()
+        {
+            return _dbSet;
+        }
+
+        public void Remove(T entity)
+        {
+            _dbSet.Remove(entity);
+        }
+
+
+
+        //public List<Student> GetAllStudents()
         //{
-        //    var result = context.Set<Student>().Add(student);
-        //    context.SaveChanges();
-        //    return result;
+        //    return context.Students.ToList();
         //}
-        public List<Student> GetAllStudents()
-        {
-            return context.Students.ToList();
-        }
-        public List<StudentCard> GetAllStudentCards()
-        {
-            return context.StudentCards.ToList();
-        }
+        //public List<StudentCard> GetAllStudentCards()
+        //{
+        //    return context.StudentCards.ToList();
+        //}
     }
 }
