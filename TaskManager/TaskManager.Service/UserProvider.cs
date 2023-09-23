@@ -8,17 +8,17 @@ using TaskManager.DAL.Repositories;
 
 namespace TaskManager.Service
 {
-    public class UserProvider
+    internal class UserProvider
     {
         private readonly IRepository<User> _userRepository;
 
-        
-        public UserProvider(IRepository<User> repository)
+
+        internal UserProvider(IRepository<User> repository)
         {
             _userRepository = repository;
         }
-        
-        public void AddUsers(List<User> users)
+
+        internal void AddUsers(List<User> users)
         {
             foreach (var user in users)
             {
@@ -26,22 +26,22 @@ namespace TaskManager.Service
             }
         }
 
-        public void AddUser(User user)
+        internal void AddUser(User user)
         {
             _userRepository.Add(user);
         }
 
-        public User GetUser(int id)
+        internal User GetUser(int id)
         {
             return _userRepository.Get(id);
         }
 
-        public IEnumerable<User> GetUsers()
+        internal IEnumerable<User> GetUsers()
         {
             return _userRepository.GetAll();
         }
 
-        public void RemoveUser(int id)
+        internal void RemoveUser(int id)
         {
             var user = GetUser(id);
             _userRepository.Remove(user);

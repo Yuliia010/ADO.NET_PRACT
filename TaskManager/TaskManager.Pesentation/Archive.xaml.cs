@@ -24,8 +24,6 @@ namespace TaskManager.Presentation
     public partial class Archive : Window
     {
         private TicketManager ticketManager;
-        private ArchiveService arService = new ArchiveService();
-
         List<TicketArchive> TicketList;
         public Archive(TicketManager ticketManager)
         {
@@ -41,7 +39,7 @@ namespace TaskManager.Presentation
         private void ShowAllData()
         {
             var ticketItems = new List<TicketArchive>();
-            TicketList = arService.GetAll();
+            TicketList = ArchiveService.GetAll();
             foreach (var ticket in TicketList)
             {
                 var ticketItem = new TicketArchive

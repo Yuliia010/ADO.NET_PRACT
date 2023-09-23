@@ -9,17 +9,17 @@ namespace TaskManager.Service.Repositories
     
     public class TicketService
     {
-        static TaskManagerContext _context = new TaskManagerContext();
-        static Repository<Ticket> _repository = new Repository<Ticket>(_context);
-        static TicketProvider _provider = new TicketProvider(_repository);
+        static private TaskManagerContext _context = new TaskManagerContext();
+        static private Repository<Ticket> _repository = new Repository<Ticket>(_context);
+        static private TicketProvider _provider = new TicketProvider(_repository);
 
-        public List<Ticket> GetAllTickets()
+        static  public List<Ticket> GetAllTickets()
         {
             var tickets = _provider.GetTasks().ToList();
 
             return tickets;
         }
-        public Ticket GetTicket(int id)
+        static public Ticket GetTicket(int id)
         {
             var tickets = GetAllTickets();
             foreach (var ticket in tickets)
@@ -31,14 +31,14 @@ namespace TaskManager.Service.Repositories
             }
             return null;
         }
-        public void Add(Ticket ticket)
+        static public void Add(Ticket ticket)
         {
 
 
             _provider.AddTicket(ticket);
         }
 
-        public void Update(Ticket ticket)
+        static public void Update(Ticket ticket)
         {
            
             var existingTicket = _context.Tickets.FirstOrDefault(t => t.Id == ticket.Id);
@@ -62,7 +62,7 @@ namespace TaskManager.Service.Repositories
             }
         }
 
-        public void RemoveTicket(int id)
+        static public void RemoveTicket(int id)
         {
             _provider.RemoveTicket(id);
         }

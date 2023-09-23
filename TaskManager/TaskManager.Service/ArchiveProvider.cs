@@ -8,25 +8,25 @@ using TaskManager.DAL.Repositories;
 
 namespace TaskManager.Service
 {
-   
-    public class ArchiveProvider
+
+    internal class ArchiveProvider
     {
         private readonly IRepository<TicketArchive> _archiveRepository;
-        public ArchiveProvider(IRepository<TicketArchive> repository)
+        internal ArchiveProvider(IRepository<TicketArchive> repository)
         {
             _archiveRepository = repository;
         }
-        public TicketArchive GetTicket(int id)
+        internal TicketArchive GetTicket(int id)
         {
             return _archiveRepository.Get(id);
         }
 
-        public IEnumerable<TicketArchive> GetTickets()
+        internal IEnumerable<TicketArchive> GetTickets()
         {
             return _archiveRepository.GetAll();
         }
 
-        public void Add(TicketArchive ticket)
+        internal void Add(TicketArchive ticket)
         {
             _archiveRepository.Add(ticket);
         }

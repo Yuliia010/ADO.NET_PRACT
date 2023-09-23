@@ -11,15 +11,14 @@ namespace TaskManager.Service.Repositories
 {
     public class ArchiveService
     {
-        TicketService ticketService = new TicketService();
-        UsersService userService = new UsersService();
-        static TaskManagerContext _context = new TaskManagerContext();
-        static Repository<TicketArchive> _repository = new Repository<TicketArchive>(_context);
-        ArchiveProvider archiveProvider = new ArchiveProvider(_repository);
-        public void IntoArchive(int id)
+        
+        static private TaskManagerContext _context = new TaskManagerContext();
+        static private Repository<TicketArchive> _repository = new Repository<TicketArchive>(_context);
+        static private ArchiveProvider archiveProvider = new ArchiveProvider(_repository);
+        static public void IntoArchive(int id)
         {
-            var ticket = ticketService.GetTicket(id);
-            var user =  userService.GetUser(ticket.UserId);
+            var ticket = TicketService.GetTicket(id);
+            var user = UsersService.GetUser(ticket.UserId);
 
             TicketArchive ticketArchive = new TicketArchive();
 
@@ -34,7 +33,7 @@ namespace TaskManager.Service.Repositories
 
         }
 
-        public List<TicketArchive> GetAll()
+        static public List<TicketArchive> GetAll()
         {
            return  archiveProvider.GetTickets().ToList();
         }

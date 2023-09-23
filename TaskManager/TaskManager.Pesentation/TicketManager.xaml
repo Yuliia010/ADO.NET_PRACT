@@ -31,7 +31,7 @@
         <Label x:Name="currentUserName"  Grid.Row="0" Grid.Column="1"  Content="{Binding UserName}"  Style="{DynamicResource LabelStyle}"></Label>
         <ListView x:Name="TicketListView" SelectionMode="Single" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="4" FontSize="15" HorizontalContentAlignment="Stretch" >
             <ListView.View >
-                <GridView >
+                <GridView > 
                     <GridViewColumn  Width ="80"  Header="ID" DisplayMemberBinding="{Binding Id}" />
                     <GridViewColumn Width ="150" Header="Summary" DisplayMemberBinding="{Binding Summary}" />
                     <GridViewColumn Width ="200" Header="Description"  DisplayMemberBinding="{Binding Description}" />

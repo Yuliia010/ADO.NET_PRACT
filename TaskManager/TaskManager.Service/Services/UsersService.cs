@@ -14,12 +14,12 @@ namespace TaskManager.Service.Repositories
 {
     public class UsersService
     {
-        static TaskManagerContext _context = new TaskManagerContext();
-        static Repository<User> _repository = new Repository<User>(_context);
-        static UserProvider _provider = new UserProvider(_repository);
-        private List<User> users => _provider.GetUsers().ToList();
+        static private TaskManagerContext _context = new TaskManagerContext();
+        static private Repository<User> _repository = new Repository<User>(_context);
+        static private UserProvider _provider = new UserProvider(_repository);
+        static private List<User> users => _provider.GetUsers().ToList();
 
-        public bool Add(User user)
+        static public bool Add(User user)
         {
             if(user!= null)
             {
@@ -33,14 +33,14 @@ namespace TaskManager.Service.Repositories
             return true; 
         }
 
-        public bool CheckPassword(User user, string password)
+        static  public bool CheckPassword(User user, string password)
         {
             if (user.password == password)
                 return true;
             return false;
         }
 
-        public bool IsAdmin(string username)
+        static public bool IsAdmin(string username)
         {
             foreach (var user in users)
             {
@@ -53,7 +53,7 @@ namespace TaskManager.Service.Repositories
             return false;
         }
 
-        public User GetUser(string login)
+        static public User GetUser(string login)
         {
             foreach (var user in users)
             {
@@ -64,7 +64,7 @@ namespace TaskManager.Service.Repositories
             }
             return null;
         }
-        public User GetUser(int id)
+        static public User GetUser(int id)
         {
             foreach (var user in users)
             {
@@ -76,7 +76,7 @@ namespace TaskManager.Service.Repositories
             return null;
         }
 
-        public int GetUserIdFromName(string userName)
+        static public int GetUserIdFromName(string userName)
         {
             foreach (var user in users)
             {
@@ -88,22 +88,22 @@ namespace TaskManager.Service.Repositories
             return 0;
         }
 
-        public void DeleteUser(int id)
+        static  public void DeleteUser(int id)
         {
             _provider.RemoveUser(id);
 
         }
-        public List<User> GetAllUsers()
+        static  public List<User> GetAllUsers()
         {
             return users.ToList();
         }
 
-        public string GetUserName(int id)
+        static public string GetUserName(int id)
         {
             return _provider.GetUser(id).Name;
         }
 
-        public void Update(User user)
+        static public void Update(User user)
         {
             var existingUser = _context.Users.FirstOrDefault(t => t.Id == user.Id);
 

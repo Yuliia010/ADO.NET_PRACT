@@ -1,6 +1,7 @@
 ﻿using Microsoft.VisualBasic;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Net.Sockets;
 using System.Text;
@@ -35,12 +36,8 @@ namespace TaskManager.App
     {
         private LogIn logIn;
 
-        List<Ticket> TicketList;
         public string UserName { get; set; }
         private User currentUser = new User();
-        private TicketService tService = new TicketService();
-        private UsersService uService = new UsersService();
-        private ArchiveService arService = new ArchiveService();
         public TicketManager(User user, LogIn logIn)
         {
             InitializeComponent();
@@ -57,6 +54,7 @@ namespace TaskManager.App
 
             ShowAllData();
             AdminMode();
+
         }
 
         private void AdminMode()
@@ -69,15 +67,15 @@ namespace TaskManager.App
         private void ShowAllData()
         {
             var ticketItems = new List<TicketItem>();
-            TicketList = tService.GetAllTickets();
-            foreach (var ticket in TicketList)
+            
+            foreach (var ticket in TicketService.GetAllTickets())
             {
                 var ticketItem = new TicketItem
                 {
                     Id = ticket.Id,
                     Summary = ticket.Summary,
                     Description = ticket.Description,
-                    Assigned = uService.GetUserName(ticket.UserId),
+                    Assigned = UsersService.GetUserName(ticket.UserId),
                     Priority = ticket.Priority,
                     DueDate = ticket.DueDateTime,
                 };
@@ -94,7 +92,6 @@ namespace TaskManager.App
             userManager.Show();
             this.Hide();
         }
-
         private void Window_Closed(object sender, EventArgs e)
         {
             if (logIn != null)
@@ -110,8 +107,8 @@ namespace TaskManager.App
             {
                 int id = (TicketListView.SelectedItem as TicketItem).Id;
 
-                await Task.Run(() => arService.IntoArchive(id));
-                tService.RemoveTicket(id);
+                await Task.Run(() => ArchiveService.IntoArchive(id));
+                TicketService.RemoveTicket(id);
                 ShowAllData();
             }
         }
@@ -120,7 +117,7 @@ namespace TaskManager.App
         {
             if (editedTicket != null)
             {
-                var existingTicket = tService.GetTicket(editedTicket.Id); // Получаем существующий тикет по его Id
+                var existingTicket = TicketService.GetTicket(editedTicket.Id); // Получаем существующий тикет по его Id
 
                 if (existingTicket != null)
                 {
@@ -130,11 +127,11 @@ namespace TaskManager.App
                     existingTicket.DueDateTime = editedTicket.DueDateTime;
                     existingTicket.UserId = editedTicket.UserId;
 
-                    tService.Update(existingTicket); // Обновляем существующий тикет в базе данных
+                    TicketService.Update(existingTicket); // Обновляем существующий тикет в базе данных
                 }
                 else
                 {
-                    tService.Add(editedTicket); // Если существующего тикета нет, то добавляем новый
+                    TicketService.Add(editedTicket); // Если существующего тикета нет, то добавляем новый
                 }
 
                 ShowAllData();
@@ -157,7 +154,7 @@ namespace TaskManager.App
             {
                 int id = (TicketListView.SelectedItem as TicketItem).Id;
 
-                TicketCreate ticketCreate = new TicketCreate(this, tService.GetTicket(id));
+                TicketCreate ticketCreate = new TicketCreate(this, TicketService.GetTicket(id));
                 ticketCreate.Show();
                 this.Hide();
             }
@@ -170,8 +167,11 @@ namespace TaskManager.App
             archive.Show();
             this.Hide();
         }
+
+      
     }
+}
 
     
-}
+
 

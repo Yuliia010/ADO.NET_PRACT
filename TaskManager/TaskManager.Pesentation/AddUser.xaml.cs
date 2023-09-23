@@ -56,9 +56,6 @@ namespace TaskManager.Pesentation
             
         }
 
-
-
-
         private void Window_Closed(object sender, EventArgs e)
         {
             if (userManager != null)

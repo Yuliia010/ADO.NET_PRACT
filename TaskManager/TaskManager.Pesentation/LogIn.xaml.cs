@@ -18,13 +18,8 @@ using TaskManager.Service.Repositories;
 
 namespace TaskManager.Pesentation
 {
-    /// <summary>
-    /// Interaction logic for LogIn.xaml
-    /// </summary>
     public partial class LogIn : Window
     {
-        UsersService usersRepository = new UsersService();
-       
         public LogIn()
         {
             InitializeComponent();
@@ -37,11 +32,11 @@ namespace TaskManager.Pesentation
             string password = PassBox_Password.Password;
 
             //MessageBox.Show($"Its user {login}, {password}");
-            var user = usersRepository.GetUser(login);
+            var user = UsersService.GetUser(login);
 
             if (user != null)
             {
-                if(usersRepository.CheckPassword(user, password))
+                if(UsersService.CheckPassword(user, password))
                 {
                     MessageBox.Show("Login success!");
 

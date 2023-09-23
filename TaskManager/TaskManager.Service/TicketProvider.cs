@@ -3,17 +3,17 @@ using TaskManager.DAL.Repositories;
 
 namespace TaskManager.Service
 {
-    public class TicketProvider
+    internal class TicketProvider
     {
         private readonly IRepository<Ticket> _taskRepository;
 
 
-        public TicketProvider(IRepository<Ticket> repository)
+        internal TicketProvider(IRepository<Ticket> repository)
         {
             _taskRepository = repository;
         }
 
-        public void AddTickets(List<Ticket> tasks)
+        internal void AddTickets(List<Ticket> tasks)
         {
             foreach (var task in tasks)
             {
@@ -21,22 +21,22 @@ namespace TaskManager.Service
             }
         }
 
-        public void AddTicket(Ticket task)
+        internal void AddTicket(Ticket task)
         {
             _taskRepository.Add(task);
         }
 
-        public Ticket GetTicket(int id)
+        internal Ticket GetTicket(int id)
         {
             return _taskRepository.Get(id);
         }
 
-        public IEnumerable<Ticket> GetTasks()
+        internal IEnumerable<Ticket> GetTasks()
         {
             return _taskRepository.GetAll();
         }
 
-        public void RemoveTicket(int id)
+        internal void RemoveTicket(int id)
         {
             var ticket = GetTicket(id);
             _taskRepository.Remove(ticket);

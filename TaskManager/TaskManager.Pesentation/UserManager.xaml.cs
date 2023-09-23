@@ -32,7 +32,6 @@ namespace TaskManager.Presentation
         private TicketManager ticketManager;
 
         List<User> UsersList;
-        private UsersService uService = new UsersService();
 
         public UserManager(TicketManager ticketManager)
         {
@@ -51,7 +50,7 @@ namespace TaskManager.Presentation
         private void ShowAllData()
         {
             DataContext = this;
-            UsersList = uService.GetAllUsers();
+            UsersList = UsersService.GetAllUsers();
 
             var usersItems = new List<UserItem>();
 
@@ -87,7 +86,7 @@ namespace TaskManager.Presentation
             {
                 UserItem selectedUserItem = UserListView.SelectedItem as UserItem;
 
-                uService.DeleteUser(selectedUserItem.Id);
+                UsersService.DeleteUser(selectedUserItem.Id);
 
                 ShowAllData();
             }
@@ -101,7 +100,7 @@ namespace TaskManager.Presentation
         {
             if (editedUser != null)
             {
-                var existingUser = uService.GetUser(editedUser.login); 
+                var existingUser = UsersService.GetUser(editedUser.login); 
 
                 if (existingUser != null)
                 {
@@ -111,11 +110,11 @@ namespace TaskManager.Presentation
                     existingUser.IsAdmin = editedUser.IsAdmin;
                     existingUser.Ticket = editedUser.Ticket;
 
-                    uService.Update(editedUser); 
+                    UsersService.Update(editedUser); 
                 }
                 else
                 {
-                    uService.Add(editedUser);
+                    UsersService.Add(editedUser);
                 }
 
                 ShowAllData();
@@ -136,7 +135,7 @@ namespace TaskManager.Presentation
         {
             string login = (UserListView.SelectedItem as UserItem).Login;
 
-            AddUser addUser = new AddUser(this, uService.GetUser(login));
+            AddUser addUser = new AddUser(this, UsersService.GetUser(login));
             addUser.Show();
             this.Hide();
         }

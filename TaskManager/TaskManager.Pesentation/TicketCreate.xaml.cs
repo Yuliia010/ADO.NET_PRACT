@@ -24,10 +24,9 @@ namespace TaskManager.Presentation
     public partial class TicketCreate : Window
     {
         private TicketManager ticketManager;
+        
         Ticket editTicket;
-
-        private UsersService uService = new UsersService();
-        List<User> UsersList => uService.GetAllUsers();
+        List<User> UsersList => UsersService.GetAllUsers();
 
         public TicketCreate(TicketManager ticketManager, Ticket ticket)
         {
@@ -77,10 +76,9 @@ namespace TaskManager.Presentation
             txtDescription.Text = editTicket.Description;
             CBox_Priority.Text = editTicket.Priority.ToString();
             datePicker_DueTime.Value = editTicket.DueDateTime;
-            CBox_Assigned.Text = uService.GetUserName(editTicket.UserId);
+            CBox_Assigned.Text = UsersService.GetUserName(editTicket.UserId);
         }
 
-       
         private void Window_Closed(object sender, EventArgs e)
         {
             if (ticketManager != null)
@@ -104,7 +102,7 @@ namespace TaskManager.Presentation
             {
                 editTicket.DueDateTime = DateTime.Now.AddDays(7);
             }
-            editTicket.UserId = uService.GetUserIdFromName(CBox_Assigned.Text);
+            editTicket.UserId = UsersService.GetUserIdFromName(CBox_Assigned.Text);
          
 
             ticketManager.ReturnedTicket(editTicket);
