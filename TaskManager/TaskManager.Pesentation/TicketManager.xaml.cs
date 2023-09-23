@@ -171,7 +171,14 @@ namespace TaskManager.App
             this.Hide();
         }
 
-      
+        private void TicketListView_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            var ticketItem = TicketListView.SelectedItem as TicketItem;
+            var ticket = TicketService.GetTicket(ticketItem.Id);
+            CommentForm commentForm = new CommentForm(this, ticket, UserName);
+            commentForm.Show();
+            this.Hide();
+        }
     }
 }
 

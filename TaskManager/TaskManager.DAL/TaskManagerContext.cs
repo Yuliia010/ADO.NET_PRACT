@@ -15,6 +15,8 @@ namespace TaskManager.DAL
         public DbSet<User> Users { get; set; }
         public DbSet<TicketArchive> TicketArchives { get; set; }
 
+        public DbSet<Comment> Comments { get; set; }
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseSqlServer(connectionString);
@@ -23,13 +25,12 @@ namespace TaskManager.DAL
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-
             modelBuilder.Entity<User>()
-            .HasMany(u => u.Tickets) 
-            .WithOne(t => t.User)
-            .HasForeignKey(t => t.UserId);
+           .HasMany(u => u.Tickets)
+           .WithOne(t => t.User)
+           .HasForeignKey(t => t.UserId);
 
-            
+
 
             var user = new User()
             {

@@ -22,6 +22,35 @@ namespace TaskManager.DAL.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
+            modelBuilder.Entity("TaskManager.DAL.Entity.Comment", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<DateTime>("Created")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Info")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("TicketId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("UserName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("TicketId");
+
+                    b.ToTable("Comments");
+                });
+
             modelBuilder.Entity("TaskManager.DAL.Entity.Ticket", b =>
                 {
                     b.Property<int>("Id")
@@ -58,7 +87,7 @@ namespace TaskManager.DAL.Migrations
                         {
                             Id = 1,
                             Description = "To do test Ticket",
-                            DueDateTime = new DateTime(2023, 10, 5, 16, 29, 21, 604, DateTimeKind.Local).AddTicks(5761),
+                            DueDateTime = new DateTime(2023, 10, 5, 20, 26, 18, 659, DateTimeKind.Local).AddTicks(1891),
                             Priority = 1,
                             Summary = "Add first test ticket",
                             UserId = 1
@@ -67,7 +96,7 @@ namespace TaskManager.DAL.Migrations
                         {
                             Id = 2,
                             Description = "To do test Ticket num2",
-                            DueDateTime = new DateTime(2023, 9, 30, 16, 29, 21, 604, DateTimeKind.Local).AddTicks(5788),
+                            DueDateTime = new DateTime(2023, 9, 30, 20, 26, 18, 659, DateTimeKind.Local).AddTicks(1925),
                             Priority = 1,
                             Summary = "Add second test ticket",
                             UserId = 1
@@ -142,6 +171,17 @@ namespace TaskManager.DAL.Migrations
                             login = "yuliia",
                             password = "password"
                         });
+                });
+
+            modelBuilder.Entity("TaskManager.DAL.Entity.Comment", b =>
+                {
+                    b.HasOne("TaskManager.DAL.Entity.Ticket", "Ticket")
+                        .WithMany()
+                        .HasForeignKey("TicketId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Ticket");
                 });
 
             modelBuilder.Entity("TaskManager.DAL.Entity.Ticket", b =>
