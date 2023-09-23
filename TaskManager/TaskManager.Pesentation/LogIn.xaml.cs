@@ -47,9 +47,13 @@ namespace TaskManager.Pesentation
                 }
                 else
                 {
-                    MessageBox.Show("Incorrect input!");
+                    MessageBox.Show("Incorrect password!");
                 }
 
+            }
+            else
+            {
+                MessageBox.Show("Login failed!");
             }
             
         }

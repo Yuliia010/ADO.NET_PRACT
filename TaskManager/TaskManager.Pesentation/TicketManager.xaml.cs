@@ -117,22 +117,25 @@ namespace TaskManager.App
         {
             if (editedTicket != null)
             {
-                var existingTicket = TicketService.GetTicket(editedTicket.Id); // Получаем существующий тикет по его Id
+                var existingTicket = TicketService.GetTicket(editedTicket.Id);
+                
+                    if (existingTicket != null)
+                    {
+                        existingTicket.Summary = editedTicket.Summary;
+                        existingTicket.Description = editedTicket.Description;
+                        existingTicket.Priority = editedTicket.Priority;
+                        existingTicket.DueDateTime = editedTicket.DueDateTime;
+                        existingTicket.UserId = editedTicket.UserId;
+                        existingTicket.User = editedTicket.User;
 
-                if (existingTicket != null)
-                {
-                    existingTicket.Summary = editedTicket.Summary;
-                    existingTicket.Description = editedTicket.Description;
-                    existingTicket.Priority = editedTicket.Priority;
-                    existingTicket.DueDateTime = editedTicket.DueDateTime;
-                    existingTicket.UserId = editedTicket.UserId;
-
-                    TicketService.Update(existingTicket); // Обновляем существующий тикет в базе данных
-                }
-                else
-                {
-                    TicketService.Add(editedTicket); // Если существующего тикета нет, то добавляем новый
-                }
+                        TicketService.Update(existingTicket);
+                    }
+                    else
+                    {
+                        TicketService.Add(editedTicket);
+                    }
+                
+                
 
                 ShowAllData();
             }

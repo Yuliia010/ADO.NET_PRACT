@@ -76,13 +76,21 @@ namespace TaskManager.Pesentation
 
         private void Btn_Save_Click(object sender, RoutedEventArgs e)
         {
-            editUser.Name = txtName.Text;
-            editUser.login = txtLogin.Text;
-            editUser.password = passBox.Password;
-            editUser.IsAdmin = IsAdminBox.IsChecked == true;
+            if (string.IsNullOrEmpty(txtName.Text) || string.IsNullOrEmpty(txtLogin.Text) || string.IsNullOrEmpty(passBox.Password))
+            {
+                MessageBox.Show("Error! Check input data and try again");
+            }
+            else
+            {
+                editUser.Name = txtName.Text;
+                editUser.login = txtLogin.Text;
+                editUser.password = passBox.Password;
+                editUser.IsAdmin = IsAdminBox.IsChecked == true;
 
-            userManager.ReturnUser(editUser);
-            this.Close();
+                userManager.ReturnUser(editUser);
+                this.Close();
+            }
+           
         }
     }
 }

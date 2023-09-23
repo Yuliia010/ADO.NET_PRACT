@@ -90,24 +90,31 @@ namespace TaskManager.Presentation
 
         private void BtnSave_Click(object sender, RoutedEventArgs e)
         {
-
-            editTicket.Summary = txtSummary.Text;
-            editTicket.Description = txtDescription.Text;
-            editTicket.Priority = int.Parse(CBox_Priority.Text);
-            if (datePicker_DueTime.Value.HasValue)
+            if (string.IsNullOrEmpty(txtSummary.Text) || string.IsNullOrEmpty(txtDescription.Text) || string.IsNullOrEmpty(CBox_Priority.Text) || datePicker_DueTime.Value == null || string.IsNullOrEmpty(CBox_Assigned.Text))
             {
-                editTicket.DueDateTime = datePicker_DueTime.Value.Value;
+                MessageBox.Show("Error! Check input data and try again");
             }
             else
             {
-                editTicket.DueDateTime = DateTime.Now.AddDays(7);
+                editTicket.Summary = txtSummary.Text;
+                editTicket.Description = txtDescription.Text;
+                editTicket.Priority = int.Parse(CBox_Priority.Text);
+                if (datePicker_DueTime.Value.HasValue)
+                {
+                    editTicket.DueDateTime = datePicker_DueTime.Value.Value;
+                }
+                else
+                {
+                    editTicket.DueDateTime = DateTime.Now.AddDays(7);
+                }
+                editTicket.UserId = UsersService.GetUserIdFromName(CBox_Assigned.Text);
+
+
+                ticketManager.ReturnedTicket(editTicket);
+
+                this.Close();
             }
-            editTicket.UserId = UsersService.GetUserIdFromName(CBox_Assigned.Text);
-         
-
-            ticketManager.ReturnedTicket(editTicket);
-            this.Close();
-
+           
         }
 
         private void BtnClose_Click(object sender, RoutedEventArgs e)
