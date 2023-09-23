@@ -1,7 +1,10 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\Pract_15092023",
+    "\\Pract_15092023\\Pract_15092023.DAL",
+    "\\Pract_15092023\\Pract_15092023.DAL\\Entity"
   ],
-  "SelectedNode": "\\TaskManager.sln",
+  "SelectedNode": "\\Pract_15092023\\Pract_15092023.DAL\\Entity\\Student.cs",
   "PreviewInSolutionExplorer": false
 }
