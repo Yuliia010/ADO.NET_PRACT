@@ -113,7 +113,7 @@ namespace TaskManager.Service.Repositories
                 existingUser.login = user.login;
                 existingUser.password = user.password;
                 existingUser.IsAdmin = user.IsAdmin;
-                existingUser.Ticket = user.Ticket;
+                existingUser.Tickets = user.Tickets;
 
                 _context.SaveChanges();
             }

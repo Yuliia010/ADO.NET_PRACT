@@ -79,8 +79,8 @@ namespace TaskManager.DAL.Migrations
                 columns: new[] { "Id", "Description", "DueDateTime", "Priority", "Summary", "UserId" },
                 values: new object[,]
                 {
-                    { 1, "To do test Ticket", new DateTime(2023, 10, 5, 14, 12, 3, 797, DateTimeKind.Local).AddTicks(4551), 1, "Add first test ticket", 1 },
-                    { 2, "To do test Ticket num2", new DateTime(2023, 9, 30, 14, 12, 3, 797, DateTimeKind.Local).AddTicks(4577), 1, "Add second test ticket", 1 }
+                    { 1, "To do test Ticket", new DateTime(2023, 10, 5, 16, 29, 21, 604, DateTimeKind.Local).AddTicks(5761), 1, "Add first test ticket", 1 },
+                    { 2, "To do test Ticket num2", new DateTime(2023, 9, 30, 16, 29, 21, 604, DateTimeKind.Local).AddTicks(5788), 1, "Add second test ticket", 1 }
                 });
 
             migrationBuilder.CreateIndex(

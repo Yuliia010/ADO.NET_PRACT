@@ -12,7 +12,7 @@ using TaskManager.DAL;
 namespace TaskManager.DAL.Migrations
 {
     [DbContext(typeof(TaskManagerContext))]
-    [Migration("20230923111203_InitialCreate")]
+    [Migration("20230923132921_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
@@ -61,7 +61,7 @@ namespace TaskManager.DAL.Migrations
                         {
                             Id = 1,
                             Description = "To do test Ticket",
-                            DueDateTime = new DateTime(2023, 10, 5, 14, 12, 3, 797, DateTimeKind.Local).AddTicks(4551),
+                            DueDateTime = new DateTime(2023, 10, 5, 16, 29, 21, 604, DateTimeKind.Local).AddTicks(5761),
                             Priority = 1,
                             Summary = "Add first test ticket",
                             UserId = 1
@@ -70,7 +70,7 @@ namespace TaskManager.DAL.Migrations
                         {
                             Id = 2,
                             Description = "To do test Ticket num2",
-                            DueDateTime = new DateTime(2023, 9, 30, 14, 12, 3, 797, DateTimeKind.Local).AddTicks(4577),
+                            DueDateTime = new DateTime(2023, 9, 30, 16, 29, 21, 604, DateTimeKind.Local).AddTicks(5788),
                             Priority = 1,
                             Summary = "Add second test ticket",
                             UserId = 1
@@ -150,7 +150,7 @@ namespace TaskManager.DAL.Migrations
             modelBuilder.Entity("TaskManager.DAL.Entity.Ticket", b =>
                 {
                     b.HasOne("TaskManager.DAL.Entity.User", "User")
-                        .WithMany("Ticket")
+                        .WithMany("Tickets")
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -160,7 +160,7 @@ namespace TaskManager.DAL.Migrations
 
             modelBuilder.Entity("TaskManager.DAL.Entity.User", b =>
                 {
-                    b.Navigation("Ticket");
+                    b.Navigation("Tickets");
                 });
 #pragma warning restore 612, 618
         }

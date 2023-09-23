@@ -24,6 +24,7 @@ namespace TaskManager.Pesentation
         {
             InitializeComponent();
             WindowStartupLocation = WindowStartupLocation.CenterScreen;
+           
         }
         
         private void Btn_LogIn_Click(object sender, RoutedEventArgs e)

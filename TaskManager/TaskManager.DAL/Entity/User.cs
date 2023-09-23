@@ -19,6 +19,6 @@ namespace TaskManager.DAL.Entity
         public string password { get; set; }
         [Required]
         public bool IsAdmin { get; set; }
-        public virtual List <Ticket> Ticket { get; set; }
+        public virtual List <Ticket> Tickets{ get; set; }
     }
 }

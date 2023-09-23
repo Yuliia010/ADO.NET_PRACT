@@ -108,7 +108,7 @@ namespace TaskManager.Presentation
                     existingUser.login = editedUser.login;
                     existingUser.password = editedUser.password;
                     existingUser.IsAdmin = editedUser.IsAdmin;
-                    existingUser.Ticket = editedUser.Ticket;
+                    existingUser.Tickets = editedUser.Tickets;
 
                     UsersService.Update(editedUser); 
                 }

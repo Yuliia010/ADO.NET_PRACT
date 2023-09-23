@@ -25,10 +25,11 @@ namespace TaskManager.DAL
         {
 
             modelBuilder.Entity<User>()
-            .HasMany(u => u.Ticket) 
+            .HasMany(u => u.Tickets) 
             .WithOne(t => t.User)
             .HasForeignKey(t => t.UserId);
 
+            
 
             var user = new User()
             {
@@ -61,6 +62,8 @@ namespace TaskManager.DAL
                 UserId = user.Id
             };
 
+
+          
             modelBuilder.Entity<Ticket>().HasData(ticket1, ticket2);
 
             base.OnModelCreating(modelBuilder);
