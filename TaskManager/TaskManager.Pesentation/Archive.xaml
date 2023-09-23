@@ -1,0 +1,23 @@
+﻿<Window x:Class="TaskManager.Presentation.Archive"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TaskManager.Presentation"
+        mc:Ignorable="d"
+        Title="Archive" Height="450" Width="800" Closed="Window_Closed">
+    <Grid>
+        <ListView x:Name="TicketListView" SelectionMode="Single" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="4" FontSize="15" HorizontalContentAlignment="Stretch" >
+            <ListView.View >
+                <GridView >
+                    <GridViewColumn  Width ="80"  Header="ID" DisplayMemberBinding="{Binding Id}" />
+                    <GridViewColumn Width ="150" Header="Summary" DisplayMemberBinding="{Binding Summary}" />
+                    <GridViewColumn Width ="200" Header="Description"  DisplayMemberBinding="{Binding Description}" />
+                    <GridViewColumn Width ="100" Header="Assigned"  DisplayMemberBinding="{Binding UserName}" />
+                    <GridViewColumn Width ="80" Header="Priority" DisplayMemberBinding="{Binding Priority}" />
+                    <GridViewColumn Width="200" Header="Due Date" DisplayMemberBinding="{Binding DueDateTime, StringFormat='dd/MM/yyyy hh:mm tt'}" />
+                </GridView>
+            </ListView.View>
+        </ListView>
+    </Grid>
+</Window>

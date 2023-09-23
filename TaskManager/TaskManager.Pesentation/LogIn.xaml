@@ -1,0 +1,39 @@
+﻿<Window x:Class="TaskManager.Pesentation.LogIn"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TaskManager.Pesentation"
+        mc:Ignorable="d"
+        Style="{DynamicResource WindowStyle}"
+        Title="LogIn" Height="220" Width="500">
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Dictionary/Dictionary1.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition ></RowDefinition>
+            <RowDefinition ></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition Height="1.5*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <Label Grid.Row="0" Grid.Column="0" Content="User Name"  VerticalAlignment="Center" Style ="{DynamicResource LogLabelStyle}"></Label>
+        <Label Grid.Row="1" Grid.Column="0" Content="Password"  VerticalAlignment="Center" Style ="{DynamicResource LogLabelStyle}"></Label>
+        <TextBox x:Name="TxtBox_UserName" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="3" Style="{DynamicResource TextBoxStyle}" />
+        <PasswordBox x:Name="PassBox_Password" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="3"  Style="{DynamicResource PasswordBoxStyle}" />
+
+        <Button x:Name="Btn_LogIn"  Grid.Row="3" Grid.Column="1"  Content="Log In" Style="{DynamicResource ButtonMenuStyle}" Background="LightGreen" Click="Btn_LogIn_Click" ></Button>
+        <Button x:Name="Btn_Cancel" Grid.Row="3" Grid.Column="2" Content="Cancel" Style="{DynamicResource ButtonMenuStyle}" Background="IndianRed" Click="Btn_Cancel_Click" ></Button>
+    </Grid>
+</Window>
