@@ -35,9 +35,10 @@ namespace TaskManager.Service.Repositories
 
         static  public bool CheckPassword(User user, string password)
         {
-            if (user.password == password)
-                return true;
-            return false;
+            //if (user.password == password)
+            //    return true;
+
+            return user.password == password;
         }
 
         static public bool IsAdmin(string username)
