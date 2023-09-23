@@ -111,5 +111,14 @@ namespace TaskManager.Presentation
             this.Close();
 
         }
+
+        private void BtnClose_Click(object sender, RoutedEventArgs e)
+        {
+            if (ticketManager != null)
+            {
+                ticketManager.Show();
+                this.Close();
+            }
+        }
     }
 }
